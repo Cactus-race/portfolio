@@ -45,10 +45,10 @@ function createProjectPlaceholder({
 
 const heroConfig = {
   name: "ROUAID KERROUM",
-  introLabel: "\u00C9TUDIANT EN DESIGN & D\u00C9VELOPPEMENT WEB",
+  introLabel: "\u00C9TUDIANT MMI — GRENOBLE & ALENTOURS",
   introText:
-    "Je con\u00E7ois des identit\u00E9s et des exp\u00E9riences digitales fortes pour des marques qui veulent laisser une empreinte sensible et m\u00E9morable.",
-  services: ["/WEB DESIGN (UX/UI)", "/WEB DEVELOPMENT"],
+    "Je travaille sur des projets visuels, du graphisme à la vidéo en passant par le web, en explorant différents formats et supports.",
+  services: ["/WEB DESIGN", "/AUDIOVISUEL"],
   availabilityText: "Disponible pour une collaboration",
   email: "rouaid.kerroum@gmail.com",
   navLinks: [
@@ -58,7 +58,7 @@ const heroConfig = {
   ],
   images: [
     {
-      src: "https://images.pexels.com/photos/9486853/pexels-photo-9486853.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1600&w=900",
+      src: "./data/project-assets/motiongraphique/lecasse.png",
       alt: "Mains devant un fond rose en studio.",
       offsetX: "-13%",
       offsetY: "4%",
@@ -66,7 +66,7 @@ const heroConfig = {
       zIndex: 1
     },
     {
-      src: "https://images.pexels.com/photos/29088054/pexels-photo-29088054.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1600&w=900",
+      src: "./data/project-assets/video/afdm.png",
       alt: "Portrait \u00E9ditorial sur fond rose avec boule \u00E0 facettes.",
       offsetX: "12%",
       offsetY: "-6%",
@@ -74,7 +74,7 @@ const heroConfig = {
       zIndex: 2
     },
     {
-      src: "https://images.pexels.com/photos/10132193/pexels-photo-10132193.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1600&w=900",
+      src: "./data/project-assets/video/goodbrat.png",
       alt: "Boule \u00E0 facettes rose sur fond studio minimaliste.",
       offsetX: "0%",
       offsetY: "0%",
@@ -87,7 +87,7 @@ const heroConfig = {
 const aboutSectionConfig = {
   label: "A PROPOS",
   manifesto:
-    "Ce portfolio est consacr\u00E9 \u00E0 la m\u00E9thode derri\u00E8re la cr\u00E9ation d\u2019exp\u00E9riences digitales qui repoussent les limites. J\u2019avance par curiosit\u00E9, it\u00E9ration et exp\u00E9rimentation pour concevoir des projets qui laissent une impression durable.",
+    "Ce portfolio rassemble mes réalisations et explique comment elles ont été pensées et construites, de l’idée de départ jusqu’au résultat.",
   highlightType: "words"
 };
 
@@ -165,7 +165,7 @@ const footerConfig = {
     { label: "Contact", href: "#footer-contact" }
   ],
   cvLabel: "T\u00E9l\u00E9charger mon CV",
-  cvHref: "./data/project-assets/cv-rk-26.pdf"
+  cvHref: "./data/project-assets/CV_Rouaid_KERROUM_2026.pdf"
 };
 
 const siteHeader = document.querySelector(".site-header");
@@ -417,7 +417,7 @@ function populateFooter() {
     label: footerConfig.cvLabel,
     href: footerConfig.cvHref,
     classes: "nav-pill nav-pill--light nav-pill--with-icon nav-pill--footer-cv",
-    dataAttributes: 'data-footer-cv-button download="cv-rk-26.pdf"',
+    dataAttributes: 'data-footer-cv-button download="CV_Rouaid_KERROUM_2026.pdf"',
     iconMarkup: `
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path
