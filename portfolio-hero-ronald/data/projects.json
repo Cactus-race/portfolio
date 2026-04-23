@@ -120,14 +120,23 @@
       "href": "./project.html?slug=refonte-la-bifurk",
       "media": [
         {
+          "id": "refonte-la-bifurk-video",
+          "type": "video",
+          "provider": "youtube",
+          "src": "https://youtu.be/hz43ZZezOdI",
+          "ratio": "16:9",
+          "layout": "hero",
+          "caption": "Video de navigation dans le site La Bifurk."
+        },
+        {
           "id": "refonte-la-bifurk-main",
           "type": "image",
           "provider": "file",
           "src": "./data/project-assets/webdesign/bifurk.png",
           "alt": "Apercu du projet Refonte La Bifurk.",
           "ratio": "16:9",
-          "layout": "hero",
-          "caption": "Direction d'interface de la refonte La Bifurk."
+          "layout": "full",
+          "caption": "Capture principale de l'interface La Bifurk."
         }
       ]
     },
@@ -146,14 +155,23 @@
       "href": "./project.html?slug=wonders-around-the-world",
       "media": [
         {
+          "id": "wonders-around-the-world-video",
+          "type": "video",
+          "provider": "youtube",
+          "src": "https://youtu.be/p2Q3mUkMTd0",
+          "ratio": "16:9",
+          "layout": "hero",
+          "caption": "Video de navigation dans le site Wonders Around The World."
+        },
+        {
           "id": "wonders-around-the-world-main",
           "type": "image",
           "provider": "file",
           "src": "./data/project-assets/webdesign/waw.png",
           "alt": "Apercu du projet Wonders Around The World.",
           "ratio": "16:9",
-          "layout": "hero",
-          "caption": "Refonte web et direction graphique pour l'association."
+          "layout": "full",
+          "caption": "Capture principale de l'interface Wonders Around The World."
         }
       ]
     },
@@ -172,14 +190,23 @@
       "href": "./project.html?slug=frame",
       "media": [
         {
+          "id": "frame-video",
+          "type": "video",
+          "provider": "youtube",
+          "src": "https://youtu.be/7LSlaX48DyA",
+          "ratio": "16:9",
+          "layout": "hero",
+          "caption": "Video de navigation dans le site FRAME."
+        },
+        {
           "id": "frame-main",
           "type": "image",
           "provider": "file",
           "src": "./data/project-assets/webdesign/frame.png",
           "alt": "Apercu du projet FRAME.",
           "ratio": "16:9",
-          "layout": "hero",
-          "caption": "Interface principale de la plateforme fictive FRAME."
+          "layout": "full",
+          "caption": "Capture principale de l'interface FRAME."
         }
       ]
     },
@@ -198,14 +225,23 @@
       "href": "./project.html?slug=jiyi",
       "media": [
         {
+          "id": "jiyi-video",
+          "type": "video",
+          "provider": "youtube",
+          "src": "https://youtu.be/crq6aDSvqV8",
+          "ratio": "16:9",
+          "layout": "hero",
+          "caption": "Video de navigation dans le site JIYI."
+        },
+        {
           "id": "jiyi-main",
           "type": "image",
           "provider": "file",
           "src": "./data/project-assets/webdesign/jiyi.png",
           "alt": "Apercu du projet JIYI.",
           "ratio": "16:9",
-          "layout": "hero",
-          "caption": "Site WordPress et univers de marque fictive autour de JIYI."
+          "layout": "full",
+          "caption": "Capture principale de l'interface JIYI."
         }
       ]
     },
