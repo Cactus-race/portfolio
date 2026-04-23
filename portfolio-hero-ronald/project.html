@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Template single premium pour les projets de Rouaid Kerroum."
+    />
+    <title>Rouaid Kerroum | Projet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./project.css" />
+  </head>
+  <body class="project-page">
+    <header class="project-header">
+      <div class="project-header__inner">
+        <a class="project-header__brand" href="./index.html">&#174;Rouaid Kerroum</a>
+
+        <nav
+          class="project-header__nav"
+          data-nav-desktop
+          aria-label="Navigation principale"
+        ></nav>
+
+        <button
+          class="project-header__burger"
+          type="button"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="project-mobile-nav"
+          aria-label="Ouvrir le menu"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="project-header__drawer" id="project-mobile-nav" data-nav-drawer hidden>
+        <nav
+          class="project-header__drawer-nav"
+          data-nav-mobile
+          aria-label="Navigation mobile"
+        ></nav>
+      </div>
+    </header>
+
+    <main class="project-main">
+      <section class="project-shell" data-project-shell hidden>
+        <div class="project-shell__inner">
+          <div class="project-shell__grid">
+            <aside class="project-sidebar">
+              <a class="project-sidebar__back" data-project-back href="./projects.html">
+                Retour aux projets
+              </a>
+
+              <h1
+                class="project-sidebar__title"
+                data-project-title
+                data-reveal="lines"
+              ></h1>
+              <p class="project-sidebar__meta-line" data-project-meta data-project-meta-reveal></p>
+
+              <div class="project-sidebar__group" data-project-meta-reveal>
+                <span class="project-sidebar__group-label">Outils</span>
+                <div class="project-sidebar__chips" data-project-tools></div>
+              </div>
+
+              <p
+                class="project-sidebar__summary"
+                data-project-summary
+                data-reveal="lines"
+              ></p>
+            </aside>
+
+            <section class="project-media" aria-label="Medias du projet">
+              <div class="project-media__rail" data-project-media-rail></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-related" data-project-related hidden>
+        <div class="project-related__inner">
+          <div class="project-related__header">
+            <p class="project-related__eyebrow" data-related-label></p>
+            <h2 class="project-related__title" data-related-title></h2>
+          </div>
+
+          <div class="project-related__grid" data-related-grid></div>
+        </div>
+      </section>
+
+      <section class="project-error" data-project-error hidden>
+        <div class="project-error__inner" data-error-panel>
+          <p class="project-error__eyebrow">ERREUR</p>
+          <h1 class="project-error__title">Projet introuvable</h1>
+          <p class="project-error__copy">
+            Cette fiche n'est pas encore reliee au JSON ou le slug demande est incorrect.
+          </p>
+          <a class="nav-pill nav-pill--action" href="./projects.html">
+            <span class="nav-pill__border"></span>
+            <span class="nav-pill__ripple"><span></span></span>
+            <span class="nav-pill__title">
+              <span data-text="Retour aux projets">Retour aux projets</span>
+            </span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="footer-contact">
+      <div class="site-footer__inner">
+        <div class="site-footer__top">
+          <div class="site-footer__cta-block">
+            <a class="site-footer__cta" data-footer-cta href="#">
+              <span class="site-footer__cta-text"></span>
+              <span class="site-footer__cta-icon" aria-hidden="true">
+                <svg viewBox="0 0 58 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 17.5C15.5 16.4 27.4 16.1 45.8 16.6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M34.2 5.7C41.8 9.1 47.8 12.8 55.2 17.1C48.1 21.6 42.2 25.6 35.1 31"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+
+          <nav
+            class="site-footer__nav"
+            data-footer-links
+            aria-label="Navigation du footer"
+          ></nav>
+        </div>
+
+        <div class="site-footer__middle">
+          <a class="site-footer__email" data-footer-email href="#"></a>
+          <div class="site-footer__cv-wrap" data-footer-cv></div>
+        </div>
+      </div>
+
+      <div class="site-footer__marquee" data-footer-marquee aria-hidden="true">
+        <div class="site-footer__marquee-track" data-footer-marquee-track></div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="./project.js"></script>
+  </body>
+</html>

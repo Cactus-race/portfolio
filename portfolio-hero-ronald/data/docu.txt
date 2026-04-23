@@ -1,0 +1,121 @@
+﻿VIDEO : 
+PUB ACADOMIA
+Un des premiers mini-projets réalisés en TP en groupe, où nous devions reproduire une publicité. L’objectif était de s’entraîner à suivre un script pour réaliser une vidéo la plus fidèle possible à l’originale.
+
+
+
+Sur ce projet, chacun avait un rôle précis (cadreur, lumière, script, acteur). Pour ma part, j’étais scripte. Une fois le tournage terminé, nous avons fait le montage , en essayant de nous rapprocher au maximum de la vidéo d’origine. C’était surtout un exercice, sans grande pression, mais qui nous a permis de manipuler du matériel et de commencer à créer.
+
+
+Lien : https://youtu.be/G6wktXAPtSs
+
+
+AU FIL DES MOTS
+Mon premier documentaire, réalisé en première année en groupe de cinq.
+
+
+On a appris à préparer un tournage : repérages, choix des lieux d’interview, rédaction d’une note d’intention, storyboard, préparation des questions et réflexion sur les plans.
+
+
+Pendant le tournage, on a travaillé en équipe avec des rôles répartis, puis on a enchaîné avec le dérushage et le montage final en groupe.
+
+
+C’était une première vraie expérience de documentaire. J’ai beaucoup aimé le côté concret : rencontrer la personne, faire les repérages, réfléchir aux plans et monter le projet. J’en garde un très bon souvenir.
+
+
+Lien : https://www.youtube.com/watch?v=LefR8gwXD3w
+
+
+
+
+CLIP GOOD BRAT
+Projet réalisé en groupe de cinq : création d’un clip pour le groupe de garage rock GOOD BRAT (Grenoble), dans la continuité du travail sur leur direction artistique (cover et logo). L’idée était de prolonger leur univers visuel en vidéo.
+
+
+On a d’abord proposé plusieurs concepts, puis développé celui choisi avec un dossier de production complet (storyboard, séquencier, liste de plans, organisation du tournage, autorisations, répartition des rôles).
+
+
+Le tournage s’est fait en plusieurs temps : captation de leur concert à l’Austra Rock, deux journées pour les scènes narratives, puis une dernière journée avec le groupe en répétition.
+
+
+J’étais assistant réal sur le tournage. En montage, chacun a réalisé sa version : j’ai travaillé quelque chose d’assez dynamique, en intégrant des images VHS pour un rendu plus brut, en lien avec leur univers.
+
+
+Ce n’est pas la version finale du clip, mais mon propre rendu. Même si le motion design a été fait rapidement à la fin, je suis satisfait du résultat global.
+
+
+Lien : https://youtu.be/KBQ1MHSX82Y
+
+
+
+
+WEBDESIGN
+REFONTE LA BIFURK
+ Projet de cours réalisé en groupe de trois, avec pour objectif de proposer une refonte du site de La Bifurk.
+L’idée était d’apporter un nouveau souffle au site : le moderniser, améliorer la lisibilité et proposer une interface plus actuelle. On a travaillé sur la structure, la hiérarchie des contenus et l’aspect visuel pour rendre l’ensemble plus clair et plus cohérent.
+Ce projet nous a permis de comprendre les enjeux d’une refonte : repartir de l’existant, identifier les points faibles et proposer une version plus adaptée aux usages actuels.
+Lien : https://youtu.be/hz43ZZezOdI
+
+
+REFONTE WONDERS AROUND THE WORLD
+ Projet de refonte pour l’association Wonders Around The World, qui œuvre pour rendre le skateboard accessible partout dans le monde.
+Le travail s’est fait en lien avec l’équipe de l’association pour comprendre leurs besoins, leurs valeurs et leur manière de communiquer. L’objectif était de concevoir un site clair et moderne, tout en gardant un univers humain et proche de la rue, sans tomber dans les clichés liés au skate.
+Une attention particulière a été portée aux créations graphiques réalisées par les enfants et les membres de l’association, qui ont influencé la direction artistique. L’interface repose sur une base noir et blanc, avec des touches de rouge, jaune et bleu-violet. J’ai aussi réalisé des éléments graphiques inspirés de stickers, ainsi que l’intégration d’illustrations dessinées à la main et de textures pour renforcer cet aspect vivant.
+Ce projet m’a permis de travailler une identité visuelle complète appliquée au web, en trouvant un équilibre entre contraintes, direction artistique et valeurs humaines.
+Lien : https://youtu.be/p2Q3mUkMTd0
+
+
+PROJET FRAME
+ Projet personnel réalisé en autonomie. Passionné de cinéma et de webdesign, j’ai imaginé une plateforme de streaming fictive.
+Ce projet m’a permis d’explorer librement une direction graphique tout en développant le site. Il a été réalisé en HTML, CSS, PHP et JavaScript, avec une base de données en JSON.
+C’était à la fois un projet créatif et technique, qui m’a permis de progresser sur le développement web tout en travaillant une interface inspirée des plateformes existantes.
+Lien : https://youtu.be/7LSlaX48DyA
+
+
+JIYI
+ Projet de première année réalisé sur WordPress. Le point de départ était un objet conçu à partir d’autres objets, sans utilité définie. Le but était d’imaginer son usage et de construire tout un univers autour, jusqu’à créer une entreprise fictive.
+On a commencé par réfléchir au positionnement : à qui s’adresse le produit, quel usage, quelle cible. Ensuite, on a développé toute une identité visuelle (logo, couleurs, typographies, visuels) pour rendre le projet crédible et cohérent.
+De mon côté, j’ai travaillé sur la création du site web via un CMS (WordPress).
+Lien : https://youtu.be/crq6aDSvqV8
+
+
+DESIGN GRAPHIQUE : 
+CHOCO JOJO
+ Projet consistant à créer une marque fictive autour d’un produit au choix (boisson alcoolisée, café ou chocolat). J’ai choisi de travailler sur une marque de chocolat.
+Le but était de concevoir toute la direction artistique de la marque : ses valeurs, son univers visuel et sa cohérence globale. Le projet s’est déroulé en plusieurs étapes : création du logo, puis des packagings, avant de terminer par une charte graphique complète pour lier l’ensemble.
+J’ai donc créé Choco Jojo, une marque de chocolat artisanale et gourmande, avec un univers visuel pensé pour être à la fois attractif et cohérent sur tous les supports.
+Lien vers le drive charte graphique : https://drive.google.com/file/d/1yIBXGsRmTGIyUMd0K3nYFHBhL5SD7Nlq/view?usp=sharing
+
+
+________________
+
+
+YORUESHI
+ Projet de refonte de la charte graphique de Yorueshi, une petite entreprise qui vend des dessins.
+L’objectif était de moderniser son identité visuelle tout en restant en lien avec son univers artistique. Pour le logo, j’ai proposé quelque chose de moderne, organique et légèrement destructuré, inspiré de l’éclaboussement de l’encre d’un pinceau.
+L’idée était de garder un côté artistique fort tout en apportant plus de lisibilité et de cohérence à l’ensemble.
+Pas de lien
+
+
+Motion design:
+LA GRANDE TOILE
+ Projet réalisé en groupe de trois, mêlant motion design et prises de vue réelles. Le thème imposé était « liens », et nous avons choisi de faire un parallèle entre les toiles d’araignée et le lien social, dans un style cartoon, comme un petit épisode de dessin animé.
+On a commencé par imaginer l’histoire, les décors et les personnages via des storyboards, puis on est passé au tournage des plans. Ensuite, on a intégré et animé les personnages dans les scènes, avant d’ajouter les bruitages.
+Le travail s’est fait en grande partie en groupe, mais je me suis surtout occupé du character design et du sound design.
+J’ai beaucoup apprécié ce projet et je trouve le rendu final réussi. Il reste quelques petits problèmes de tracking qui auraient pu être améliorés avec plus de temps, mais je suis globalement très satisfait.
+Lien : https://youtu.be/U0qTTg_kA6o
+
+
+POCHETTE GOOD BRAT
+ Projet réalisé en groupe de trois autour de la direction artistique d’un groupe de musique (GOOD BRAT, garage rock à Grenoble).
+Le travail consistait à créer une cover, un logo, une affiche ainsi qu’une version animée de la cover. On a commencé par une phase de recherches (références, inspirations, pistes créatives), puis on a présenté plusieurs directions au groupe pour qu’ils choisissent celle qui leur correspondait le mieux.
+Ensuite, on a réparti les rôles. De mon côté, j’ai réalisé la pochette d’album avec une approche volontairement sale, provocatrice et trash, en lien avec leur univers rock/punk.
+Dans un second temps, chacun a animé la cover sur After Effects pour créer une loop.
+Lien : https://youtube.com/shorts/1s2RNe_MdTo
+
+
+LE CASSE
+ Projet personnel de portfolio, où je devais produire une création dans un des domaines de la formation. J’ai choisi de me tourner vers l’animation pour tester le frame by frame, dans un style cartoon que j’avais déjà exploré avec La Grande Toile.
+J’ai d’abord écrit l’histoire, puis réalisé un storyboard, le character design et les décors (sur Illustrator), avant de passer à l’animation sur Adobe Animate puis ensuite au montage et au sound design.
+Ce projet m’a permis d’explorer un workflow complet en animation traditionnelle, de l’écriture jusqu’à la réalisation.
+Lien : https://www.youtube.com/watch?v=lREWPNNzi_E

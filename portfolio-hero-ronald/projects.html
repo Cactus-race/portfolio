@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Galerie premium des projets de Rouaid Kerroum, filtrable par catégorie et alimentée par une base JSON."
+    />
+    <title>Rouaid Kerroum | Projets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./projects.css" />
+  </head>
+  <body class="projects-page">
+    <header class="projects-header">
+      <div class="projects-header__inner">
+        <a class="projects-header__brand" href="./index.html">&#174;Rouaid Kerroum</a>
+
+        <nav
+          class="projects-header__nav"
+          data-nav-desktop
+          aria-label="Navigation principale"
+        ></nav>
+
+        <button
+          class="projects-header__burger"
+          type="button"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="projects-mobile-nav"
+          aria-label="Ouvrir le menu"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div
+        class="projects-header__drawer"
+        id="projects-mobile-nav"
+        data-nav-drawer
+        hidden
+      >
+        <nav
+          class="projects-header__drawer-nav"
+          data-nav-mobile
+          aria-label="Navigation mobile"
+        ></nav>
+      </div>
+    </header>
+
+    <main class="projects-main">
+      <section class="projects-hero" aria-labelledby="projects-page-title">
+        <div class="projects-hero__inner">
+          <p class="projects-hero__eyebrow" data-page-label></p>
+          <h1
+            id="projects-page-title"
+            class="projects-hero__title"
+            data-page-title
+            data-reveal="lines"
+          ></h1>
+          <p
+            class="projects-hero__lede"
+            data-page-lede
+            data-reveal="lines"
+          ></p>
+        </div>
+      </section>
+
+      <section class="projects-gallery" aria-labelledby="projects-gallery-title">
+        <div class="projects-gallery__inner">
+          <div class="projects-gallery__toolbar">
+            <h2 id="projects-gallery-title" class="sr-only">Galerie des projets</h2>
+            <div
+              class="projects-gallery__filters"
+              data-filter-bar
+              aria-label="Filtres des projets"
+            ></div>
+            <p class="projects-gallery__status" data-gallery-status role="status" hidden></p>
+          </div>
+
+          <div class="projects-gallery__grid" data-gallery-grid></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="footer-contact">
+      <div class="site-footer__inner">
+        <div class="site-footer__top">
+          <div class="site-footer__cta-block">
+            <a class="site-footer__cta" data-footer-cta href="#">
+              <span class="site-footer__cta-text"></span>
+              <span class="site-footer__cta-icon" aria-hidden="true">
+                <svg viewBox="0 0 58 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 17.5C15.5 16.4 27.4 16.1 45.8 16.6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M34.2 5.7C41.8 9.1 47.8 12.8 55.2 17.1C48.1 21.6 42.2 25.6 35.1 31"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+
+          <nav
+            class="site-footer__nav"
+            data-footer-links
+            aria-label="Navigation du footer"
+          ></nav>
+        </div>
+
+        <div class="site-footer__middle">
+          <a class="site-footer__email" data-footer-email href="#"></a>
+          <div class="site-footer__cv-wrap" data-footer-cv></div>
+        </div>
+      </div>
+
+      <div class="site-footer__marquee" data-footer-marquee aria-hidden="true">
+        <div class="site-footer__marquee-track" data-footer-marquee-track></div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="./projects.js"></script>
+  </body>
+</html>

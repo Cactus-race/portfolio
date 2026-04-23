@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hero premium portfolio de Rouaid Kerroum avec header, marquee typographique et section de présentation immersive."
+    />
+    <title>Rouaid Kerroum | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-header__brand" href="./index.html">&#174;Rouaid Kerroum</a>
+
+        <nav
+          class="site-header__nav"
+          data-nav-desktop
+          aria-label="Navigation principale"
+        ></nav>
+
+        <button
+          class="site-header__burger"
+          type="button"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="mobile-nav-drawer"
+          aria-label="Ouvrir le menu"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div
+        class="site-header__drawer"
+        id="mobile-nav-drawer"
+        data-nav-drawer
+        hidden
+      >
+        <nav
+          class="site-header__drawer-nav"
+          data-nav-mobile
+          aria-label="Navigation mobile"
+        ></nav>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__viewport">
+          <div class="hero__aurora" aria-hidden="true"></div>
+          <div class="hero__noise" aria-hidden="true"></div>
+
+          <div class="hero__surface">
+            <div class="hero__label-wrap">
+              <p class="hero__label" data-field="introLabel" data-reveal="lines"></p>
+            </div>
+
+            <div class="hero__services-panel">
+              <div class="hero__services" data-services></div>
+            </div>
+
+            <div class="hero__marquee" data-marquee aria-hidden="true">
+              <div class="hero__marquee-track" data-marquee-track></div>
+            </div>
+
+            <div class="hero__stack">
+              <div class="hero__stack-glow" aria-hidden="true"></div>
+              <div class="hero__cards" data-card-stack></div>
+            </div>
+
+            <div class="hero__contact-panel">
+              <a class="hero__contact" data-contact href="#">
+                <span class="hero__availability">
+                  <span
+                    class="hero__availability-text"
+                    data-field="availabilityText"
+                    data-reveal="lines"
+                  ></span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    class="hero__contact-icon"
+                  >
+                    <path
+                      d="M7 7h10v10M7 7l10 10"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span class="hero__email" data-field="email" data-reveal="lines"></span>
+              </a>
+            </div>
+
+            <div class="hero__intro">
+              <p class="hero__lede" data-field="introText" data-reveal="lines"></p>
+            </div>
+          </div>
+
+          <h1 id="hero-title" class="sr-only">Hero portfolio Rouaid Kerroum</h1>
+        </div>
+      </section>
+
+      <section
+        class="about-section"
+        aria-labelledby="about-title"
+        data-dark-section
+      >
+        <div class="about-section__inner" data-about-inner>
+          <div class="about-section__eyebrow-wrap">
+            <span class="about-section__dot" aria-hidden="true"></span>
+            <p class="about-section__eyebrow" data-about-label></p>
+          </div>
+
+          <div class="about-section__content">
+            <h2 id="about-title" class="sr-only">A propos</h2>
+            <p
+              class="about-section__text"
+              data-about-text
+              data-reveal-text="words"
+            ></p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="projects-section"
+        aria-labelledby="projects-title"
+        data-projects-section
+        data-dark-section
+      >
+        <div class="projects-section__inner">
+          <div class="projects-section__eyebrow-wrap">
+            <span class="projects-section__dot" aria-hidden="true"></span>
+            <p class="projects-section__eyebrow" data-projects-label></p>
+          </div>
+
+          <div class="projects-section__layout">
+            <div class="projects-section__viewer-column">
+              <div class="projects-section__viewer-sticky">
+                <div class="projects-section__viewer-shell">
+                  <div class="projects-section__media" data-project-media>
+                    <figure
+                      class="projects-section__media-layer is-active"
+                      data-project-media-layer="0"
+                    >
+                      <img
+                        src=""
+                        alt=""
+                        data-project-media-image
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </figure>
+                    <figure
+                      class="projects-section__media-layer"
+                      data-project-media-layer="1"
+                    >
+                      <img
+                        src=""
+                        alt=""
+                        data-project-media-image
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </figure>
+                  </div>
+                </div>
+
+                <div class="projects-section__meta">
+                  <div class="projects-section__meta-block">
+                    <span class="projects-section__meta-label">Type</span>
+                    <p class="projects-section__meta-value" data-project-meta-type></p>
+                  </div>
+
+                  <div class="projects-section__meta-block">
+                    <span class="projects-section__meta-label">Date</span>
+                    <p class="projects-section__meta-value" data-project-meta-date></p>
+                  </div>
+
+                  <div class="projects-section__action" data-project-link-wrap></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="projects-section__list-column">
+              <h2 id="projects-title" class="sr-only">Projets</h2>
+              <div class="projects-section__list" data-project-list></div>
+            </div>
+
+            <div
+              class="projects-section__cta-wrap projects-section__cta-wrap--desktop"
+              data-projects-cta-wrap
+            ></div>
+          </div>
+
+          <div class="projects-section__mobile-list" data-project-mobile-list></div>
+
+          <div
+            class="projects-section__cta-wrap projects-section__cta-wrap--mobile"
+            data-projects-cta-wrap
+          ></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="footer-contact" data-dark-section>
+      <div class="site-footer__inner">
+        <div class="site-footer__top">
+          <div class="site-footer__cta-block">
+            <a class="site-footer__cta" data-footer-cta href="#">
+              <span class="site-footer__cta-text"></span>
+              <span class="site-footer__cta-icon" aria-hidden="true">
+                <svg viewBox="0 0 58 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 17.5C15.5 16.4 27.4 16.1 45.8 16.6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M34.2 5.7C41.8 9.1 47.8 12.8 55.2 17.1C48.1 21.6 42.2 25.6 35.1 31"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+
+          <nav
+            class="site-footer__nav"
+            data-footer-links
+            aria-label="Navigation du footer"
+          ></nav>
+        </div>
+
+        <div class="site-footer__middle">
+          <a class="site-footer__email" data-footer-email href="#"></a>
+          <div class="site-footer__cv-wrap" data-footer-cv></div>
+        </div>
+      </div>
+
+      <div class="site-footer__marquee" data-footer-marquee aria-hidden="true">
+        <div class="site-footer__marquee-track" data-footer-marquee-track></div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
