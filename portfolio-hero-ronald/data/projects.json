@@ -333,9 +333,9 @@
       "media": [
         {
           "id": "la-grande-toile-main",
-          "type": "image",
-          "provider": "file",
-          "src": "./data/project-assets/motiongraphique/lagrandetoile.png",
+          "type": "video",
+          "provider": "youtube",
+          "src": "https://youtu.be/U0qTTg_kA6o",
           "alt": "Apercu du projet La Grande Toile.",
           "ratio": "16:9",
           "layout": "hero",
@@ -359,9 +359,9 @@
       "media": [
         {
           "id": "pochette-good-brat-main",
-          "type": "image",
-          "provider": "file",
-          "src": "./data/project-assets/motiongraphique/pochettegb.png",
+          "type": "video",
+          "provider": "youtube",
+          "src": "https://youtube.com/shorts/1s2RNe_MdTo",
           "alt": "Apercu du projet Pochette Good Brat.",
           "ratio": "1:1",
           "layout": "hero",
@@ -385,9 +385,9 @@
       "media": [
         {
           "id": "le-casse-main",
-          "type": "image",
-          "provider": "file",
-          "src": "./data/project-assets/motiongraphique/lecasse.png",
+          "type": "video",
+          "provider": "youtube",
+          "src": "https://www.youtube.com/watch?v=lREWPNNzi_E",
           "alt": "Apercu du projet Le Casse.",
           "ratio": "16:9",
           "layout": "hero",
