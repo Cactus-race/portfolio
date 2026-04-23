@@ -2,195 +2,56 @@ gsap.registerPlugin(ScrollTrigger);
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-function createProjectPlaceholder({
-  title,
-  label,
-  background,
-  accent,
-  secondary
-}) {
-  const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
-      <defs>
-        <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
-          <stop stop-color="${background}" />
-          <stop offset="1" stop-color="${secondary}" />
-        </linearGradient>
-        <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 240) rotate(126.3) scale(520 520)">
-          <stop stop-color="${accent}" stop-opacity="0.92" />
-          <stop offset="1" stop-color="${accent}" stop-opacity="0" />
-        </radialGradient>
-        <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(360 710) rotate(46.8) scale(580 420)">
-          <stop stop-color="#F3EFE8" stop-opacity="0.18" />
-          <stop offset="1" stop-color="#F3EFE8" stop-opacity="0" />
-        </radialGradient>
-      </defs>
-
-      <rect width="1600" height="900" rx="36" fill="url(#bg)" />
-      <rect x="40" y="40" width="1520" height="820" rx="28" stroke="#F3EFE8" stroke-opacity="0.12" />
-      <rect x="88" y="88" width="1424" height="724" rx="28" fill="#050505" fill-opacity="0.1" stroke="#F3EFE8" stroke-opacity="0.08" />
-      <circle cx="1180" cy="240" r="360" fill="url(#glowA)" />
-      <ellipse cx="360" cy="710" rx="360" ry="230" fill="url(#glowB)" />
-      <path d="M132 598C302 500 458 488 608 542C773 600 900 610 1125 494C1247 430 1344 388 1468 418" stroke="#F3EFE8" stroke-opacity="0.18" stroke-width="2" />
-      <path d="M132 662C302 564 458 552 608 606C773 664 900 674 1125 558C1247 494 1344 452 1468 482" stroke="#F3EFE8" stroke-opacity="0.1" stroke-width="2" />
-      <rect x="132" y="132" width="156" height="40" rx="20" fill="#F3EFE8" fill-opacity="0.08" />
-      <text x="160" y="159" fill="#F3EFE8" fill-opacity="0.78" font-family="Arial, Helvetica, sans-serif" font-size="26" letter-spacing="5">${label}</text>
-      <text x="128" y="764" fill="#F3EFE8" fill-opacity="0.92" font-family="Arial, Helvetica, sans-serif" font-size="160" font-weight="700" letter-spacing="-8">${title}</text>
-      <text x="132" y="826" fill="#F3EFE8" fill-opacity="0.54" font-family="Arial, Helvetica, sans-serif" font-size="30" letter-spacing="6">PORTFOLIO CASE STUDY</text>
-    </svg>
-  `;
-
-  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
-}
-
-const heroConfig = {
-  name: "ROUAID KERROUM",
-  introLabel: "\u00C9TUDIANT MMI — GRENOBLE & ALENTOURS",
-  introText:
-    "Je travaille sur des projets visuels, du graphisme à la vidéo en passant par le web, en explorant différents formats et supports.",
-  services: ["/WEB DESIGN", "/AUDIOVISUEL"],
-  availabilityText: "Disponible pour une collaboration",
+const pageConfig = {
   email: "rouaid.kerroum@gmail.com",
+  label: "PORTFOLIO / PROJETS",
+  title: "Selection de projets",
+  lede:
+    "Une sélection de projets en web, vidéo, motion et design graphique, qui retracent mon parcours et mon évolution. Jetez-y un œil.",
   navLinks: [
-    { label: "Projets", href: "./projects.html" },
+    { label: "Accueil", href: "./index.html" },
+    { label: "Projets", href: "./projects.html", current: true },
     { label: "A propos", href: "#", placeholder: true },
     { label: "Contact", href: "#footer-contact" }
   ],
-  images: [
-    {
-      src: "./data/project-assets/motiongraphique/lecasse.png",
-      alt: "Mains devant un fond rose en studio.",
-      offsetX: "-13%",
-      offsetY: "4%",
-      angle: "-7deg",
-      zIndex: 1
-    },
-    {
-      src: "./data/project-assets/video/afdm.png",
-      alt: "Portrait \u00E9ditorial sur fond rose avec boule \u00E0 facettes.",
-      offsetX: "12%",
-      offsetY: "-6%",
-      angle: "4deg",
-      zIndex: 2
-    },
-    {
-      src: "./data/project-assets/video/goodbrat.png",
-      alt: "Boule \u00E0 facettes rose sur fond studio minimaliste.",
-      offsetX: "0%",
-      offsetY: "0%",
-      angle: "-2deg",
-      zIndex: 3
-    }
-  ]
-};
-
-const aboutSectionConfig = {
-  label: "A PROPOS",
-  manifesto:
-    "Ce portfolio rassemble mes réalisations et explique comment elles ont été pensées et construites, de l’idée de départ jusqu’au résultat.",
-  highlightType: "words"
-};
-
-const projectsSectionConfig = {
-  label: "PROJETS",
-  ctaLabel: "Voir les projets",
-  ctaHref: "./projects.html",
-  projects: [
-    {
-      id: "refonte-la-bifurk",
-      title: "REFONTE LA BIFURK",
-      type: "Webdesign",
-      date: "2025",
-      href: "./project.html?slug=refonte-la-bifurk",
-      imageAlt: "Apercu du projet Refonte La Bifurk.",
-      imageSrc: "./data/project-assets/webdesign/bifurk.png"
-    },
-    {
-      id: "clip-good-brat",
-      title: "CLIP GOOD BRAT",
-      type: "Video",
-      date: "2025",
-      href: "./project.html?slug=clip-good-brat",
-      imageAlt: "Apercu du projet Clip Good Brat.",
-      imageSrc: "./data/project-assets/video/goodbrat.png"
-    },
-    {
-      id: "wonders-around-the-world",
-      title: "WONDERS AROUND THE WORLD",
-      type: "Webdesign",
-      date: "2025",
-      href: "./project.html?slug=wonders-around-the-world",
-      imageAlt: "Apercu du projet Wonders Around The World.",
-      imageSrc: "./data/project-assets/webdesign/waw.png"
-    },
-    {
-      id: "choco-jojo",
-      title: "CHOCO JOJO",
-      type: "Design graphique",
-      date: "2025",
-      href: "./project.html?slug=choco-jojo",
-      imageAlt: "Apercu du projet Choco Jojo.",
-      imageSrc: "./data/project-assets/designgraphique/chocojojo/bg.png"
-    },
-    {
-      id: "la-grande-toile",
-      title: "LA GRANDE TOILE",
-      type: "Motion Design",
-      date: "2025",
-      href: "./project.html?slug=la-grande-toile",
-      imageAlt: "Apercu du projet La Grande Toile.",
-      imageSrc: "./data/project-assets/motiongraphique/lagrandetoile.png"
-    },
-    {
-      id: "le-casse",
-      title: "LE CASSE",
-      type: "Motion Design",
-      date: "2026",
-      href: "./project.html?slug=le-casse",
-      imageAlt: "Apercu du projet Le Casse.",
-      imageSrc: "./data/project-assets/motiongraphique/lecasse.png"
-    }
-  ]
-};
-
-const footerConfig = {
-  ctaLabel: "Collaborons",
-  ctaHref: `mailto:${heroConfig.email}`,
-  email: heroConfig.email,
-  marqueeName: heroConfig.name,
-  footerLinks: [
-    { label: "Accueil", href: "./index.html" },
-    { label: "Projets", href: "./projects.html" },
-    { label: "\u00C0 propos", href: "#", placeholder: true },
-    { label: "Contact", href: "#footer-contact" }
+  filters: [
+    { value: "all", label: "Tout" },
+    { value: "web-design", label: "Web design" },
+    { value: "video", label: "Video" },
+    { value: "motion-design", label: "Motion Design" },
+    { value: "graphic-design", label: "Design graphique" }
   ],
-  cvLabel: "T\u00E9l\u00E9charger mon CV",
-  cvHref: "./data/project-assets/CV_Rouaid_KERROUM_2026.pdf"
+  footer: {
+    ctaLabel: "Collaborons",
+    ctaHref: "mailto:rouaid.kerroum@gmail.com",
+    email: "rouaid.kerroum@gmail.com",
+    marqueeName: "ROUAI D KERROUM",
+    footerLinks: [
+      { label: "Accueil", href: "./index.html" },
+      { label: "Projets", href: "./projects.html" },
+      { label: "A propos", href: "#", placeholder: true },
+      { label: "Contact", href: "#footer-contact" }
+    ],
+    cvLabel: "Telecharger mon CV",
+    cvHref: "./data/project-assets/cv-rk-26.pdf"
+  }
 };
 
-const siteHeader = document.querySelector(".site-header");
-const hero = document.querySelector(".hero");
-const aboutSection = document.querySelector(".about-section");
-const aboutInner = document.querySelector("[data-about-inner]");
-const aboutLabel = document.querySelector("[data-about-label]");
-const aboutText = document.querySelector("[data-about-text]");
-const projectsSection = document.querySelector("[data-projects-section]");
-const projectsLabel = document.querySelector("[data-projects-label]");
-const projectList = document.querySelector("[data-project-list]");
-const projectMobileList = document.querySelector("[data-project-mobile-list]");
-const projectMetaType = document.querySelector("[data-project-meta-type]");
-const projectMetaDate = document.querySelector("[data-project-meta-date]");
-const projectLinkWrap = document.querySelector("[data-project-link-wrap]");
-const projectsCtaWraps = [...document.querySelectorAll("[data-projects-cta-wrap]")];
-const marquee = document.querySelector("[data-marquee]");
-const marqueeTrack = document.querySelector("[data-marquee-track]");
-const cardStack = document.querySelector("[data-card-stack]");
-const servicesContainer = document.querySelector("[data-services]");
-const contactLink = document.querySelector("[data-contact]");
+const state = {
+  projects: [],
+  activeFilter: "all"
+};
+
+const pageLabel = document.querySelector("[data-page-label]");
+const pageTitle = document.querySelector("[data-page-title]");
+const pageLede = document.querySelector("[data-page-lede]");
 const desktopNav = document.querySelector("[data-nav-desktop]");
 const mobileNav = document.querySelector("[data-nav-mobile]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navDrawer = document.querySelector("[data-nav-drawer]");
+const filterBar = document.querySelector("[data-filter-bar]");
+const galleryGrid = document.querySelector("[data-gallery-grid]");
+const galleryStatus = document.querySelector("[data-gallery-status]");
 const siteFooter = document.querySelector(".site-footer");
 const footerCta = document.querySelector("[data-footer-cta]");
 const footerCtaText = document.querySelector(".site-footer__cta-text");
@@ -200,205 +61,62 @@ const footerCvWrap = document.querySelector("[data-footer-cv]");
 const footerMarquee = document.querySelector("[data-footer-marquee]");
 const footerMarqueeTrack = document.querySelector("[data-footer-marquee-track]");
 
-let revealElements = [];
 let lenisInstance;
-let marqueeTween;
-let footerMarqueeTween;
-let marqueeSettleTween;
-let revealTimeline;
 let splitInstances = [];
-let aboutTextSplit;
+let footerMarqueeTween;
 let resizeTimer;
-let introHasPlayed = false;
-let scrollArtifacts = [];
-let activeProjectIndex = 0;
-let activeProjectLayerIndex = 0;
-let projectItemsDesktop = [];
-let projectMediaLayers = [];
-let projectLinkElement;
-let projectMediaTimeline;
+let introTimeline;
+let introPlayed = false;
+let galleryTransitionTimeline;
 
-populateContent();
+populateStaticContent();
 setupNavigation();
 
 const fontsReady = document.fonts && document.fonts.ready
   ? document.fonts.ready
   : Promise.resolve();
 
-fontsReady.then(() => {
+(async function initPage() {
+  await fontsReady;
+  await loadProjects();
   initSmoothScroll();
   prepareLineReveals();
-  buildMarquees();
   playIntroSequence();
-  initScrollDynamics();
+  buildFooterMarquee();
+  ScrollTrigger.refresh();
   window.addEventListener("resize", scheduleResize, { passive: true });
-});
+})();
 
-function populateContent() {
-  document.querySelectorAll("[data-field]").forEach((element) => {
-    const fieldName = element.dataset.field;
+function populateStaticContent() {
+  pageLabel.textContent = pageConfig.label;
+  pageTitle.textContent = pageConfig.title;
+  pageLede.textContent = pageConfig.lede;
 
-    if (fieldName === "email") {
-      element.textContent = heroConfig.email;
-      return;
-    }
-
-    element.textContent = heroConfig[fieldName] || "";
-  });
-
-  aboutLabel.textContent = aboutSectionConfig.label;
-  aboutText.textContent = aboutSectionConfig.manifesto;
-  populateProjectsSection();
-  populateFooter();
-
-  servicesContainer.innerHTML = heroConfig.services
-    .map(
-      (service) =>
-        `<p class="hero__service-line" data-reveal="lines">${escapeHtml(service)}</p>`
-    )
+  const navMarkup = pageConfig.navLinks
+    .map((link) => buildNavPillMarkup(link))
     .join("");
 
-  cardStack.innerHTML = heroConfig.images
-    .map(
-      (image, index) => `
-        <div
-          class="hero-card-slot"
-          style="--offset-x:${image.offsetX}; --offset-y:${image.offsetY}; --angle:${image.angle}; --z:${image.zIndex};"
-        >
-          <figure class="hero-card" data-card>
-            <img
-              src="${image.src}"
-              alt="${escapeHtml(image.alt)}"
-              loading="eager"
-              decoding="async"
-              ${index === heroConfig.images.length - 1 ? 'fetchpriority="high"' : ""}
-            />
-          </figure>
-        </div>
-      `
-    )
+  desktopNav.innerHTML = navMarkup;
+  mobileNav.innerHTML = navMarkup;
+
+  filterBar.innerHTML = pageConfig.filters
+    .map((filter) => buildFilterPillMarkup(filter, filter.value === state.activeFilter))
     .join("");
 
-  contactLink.href = `mailto:${heroConfig.email}`;
-  contactLink.setAttribute("aria-label", `Envoyer un email \u00E0 ${heroConfig.email}`);
-
-  revealElements = [...document.querySelectorAll('[data-reveal="lines"]')];
-}
-
-function populateProjectsSection() {
-  if (!projectsSection) {
-    return;
-  }
-
-  projectsLabel.textContent = projectsSectionConfig.label;
-
-  projectList.innerHTML = projectsSectionConfig.projects
-    .map(
-      (project, index) => `
-        <article
-          class="project-item ${index === 0 ? "is-active" : ""}"
-          data-project-item
-          data-project-index="${index}"
-        >
-          <p class="project-item__title" data-project-title>${escapeHtml(project.title)}</p>
-        </article>
-      `
-    )
-    .join("");
-
-  projectMobileList.innerHTML = projectsSectionConfig.projects
-    .map(
-      (project) => `
-        <article class="project-mobile-card">
-          <figure class="project-mobile-card__media">
-            <img
-              src="${project.imageSrc}"
-              alt="${escapeHtml(project.imageAlt)}"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-          <h3 class="project-mobile-card__title">${escapeHtml(project.title)}</h3>
-          <div class="project-mobile-card__meta">
-            <div class="project-mobile-card__meta-item">
-              <span class="project-mobile-card__meta-label">Type</span>
-              <span class="project-mobile-card__meta-value">${escapeHtml(project.type)}</span>
-            </div>
-            <div class="project-mobile-card__meta-item">
-              <span class="project-mobile-card__meta-label">Date</span>
-              <span class="project-mobile-card__meta-value">${escapeHtml(project.date)}</span>
-            </div>
-          </div>
-          ${buildPillMarkup({
-            label: "Voir",
-            href: project.href,
-            classes: "nav-pill nav-pill--light nav-pill--compact",
-            dataAttributes: project.href === "#" ? "data-placeholder-link" : ""
-          })}
-        </article>
-      `
-    )
-    .join("");
-
-  projectLinkWrap.innerHTML = buildPillMarkup({
-    label: "Voir",
-    href: projectsSectionConfig.projects[0]?.href || "#",
-    classes: "nav-pill nav-pill--light nav-pill--compact",
-    dataAttributes: `data-project-link ${projectsSectionConfig.projects[0]?.href === "#" ? "data-placeholder-link" : ""}`
-  });
-
-  projectsCtaWraps.forEach((wrap) => {
-    wrap.innerHTML = buildPillMarkup({
-      label: projectsSectionConfig.ctaLabel,
-      href: projectsSectionConfig.ctaHref,
-      classes: "nav-pill nav-pill--light nav-pill--xl projects-section__cta",
-      dataAttributes: 'data-projects-cta'
-    });
-  });
-
-  projectItemsDesktop = gsap.utils.toArray("[data-project-item]");
-  projectMediaLayers = gsap.utils.toArray("[data-project-media-layer]");
-  projectLinkElement = projectLinkWrap.querySelector("[data-project-link]");
-
-  if (!projectsSection.dataset.placeholderBound) {
-    projectsSection.addEventListener("click", (event) => {
-      const link = event.target.closest('[data-placeholder-link]');
-
-      if (link) {
-        event.preventDefault();
-      }
-    });
-
-    projectsSection.dataset.placeholderBound = "true";
-  }
-
-  setActiveProject(0, {
-    immediate: true,
-    force: true
-  });
-}
-
-function populateFooter() {
-  if (!siteFooter) {
-    return;
-  }
-
-  footerCtaText.textContent = footerConfig.ctaLabel;
-  footerCta.href = footerConfig.ctaHref;
+  footerCtaText.textContent = pageConfig.footer.ctaLabel;
+  footerCta.href = pageConfig.footer.ctaHref;
   footerCta.setAttribute(
     "aria-label",
-    `Prendre contact avec Rouaid Kerroum par email`
+    "Prendre contact avec Rouaid Kerroum par email"
   );
 
-  footerLinks.innerHTML = footerConfig.footerLinks
+  footerLinks.innerHTML = pageConfig.footer.footerLinks
     .map(
       (link) => `
         <a
           class="site-footer__nav-link"
           href="${link.href}"
-          data-footer-link
           ${link.placeholder ? "data-placeholder-link" : ""}
-          aria-label="Page ${escapeHtml(link.label)}"
         >
           ${escapeHtml(link.label)}
         </a>
@@ -406,18 +124,18 @@ function populateFooter() {
     )
     .join("");
 
-  footerEmail.textContent = footerConfig.email;
-  footerEmail.href = `mailto:${footerConfig.email}`;
+  footerEmail.textContent = pageConfig.footer.email;
+  footerEmail.href = `mailto:${pageConfig.footer.email}`;
   footerEmail.setAttribute(
     "aria-label",
-    `Envoyer un email \u00E0 ${footerConfig.email}`
+    `Envoyer un email a ${pageConfig.footer.email}`
   );
 
-  footerCvWrap.innerHTML = buildPillMarkup({
-    label: footerConfig.cvLabel,
-    href: footerConfig.cvHref,
-    classes: "nav-pill nav-pill--light nav-pill--with-icon nav-pill--footer-cv",
-    dataAttributes: 'data-footer-cv-button download="CV_Rouaid_KERROUM_2026.pdf"',
+  footerCvWrap.innerHTML = buildLinkPillMarkup({
+    label: pageConfig.footer.cvLabel,
+    href: pageConfig.footer.cvHref,
+    classes: "nav-pill nav-pill--footer-cv",
+    download: "cv-rk-26.pdf",
     iconMarkup: `
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -429,29 +147,27 @@ function populateFooter() {
       </svg>
     `
   });
-
-  if (!siteFooter.dataset.placeholderBound) {
-    siteFooter.addEventListener("click", (event) => {
-      const link = event.target.closest('[data-placeholder-link]');
-
-      if (link) {
-        event.preventDefault();
-      }
-    });
-
-    siteFooter.dataset.placeholderBound = "true";
-  }
 }
 
-function buildPillMarkup({
+function buildNavPillMarkup(link) {
+  return buildLinkPillMarkup({
+    label: link.label,
+    href: link.href,
+    classes: `nav-pill${link.current ? " is-current" : ""}`,
+    placeholder: Boolean(link.placeholder)
+  });
+}
+
+function buildLinkPillMarkup({
   label,
-  href = "#",
-  classes = "nav-pill",
-  dataAttributes = "",
-  iconMarkup = ""
+  href,
+  classes,
+  placeholder = false,
+  iconMarkup = "",
+  download = ""
 }) {
   return `
-    <a class="${classes}" href="${href}" ${dataAttributes}>
+    <a class="${classes}" href="${href}" data-nav-link ${placeholder ? "data-placeholder-link" : ""} ${download ? `download="${download}"` : ""}>
       <span class="nav-pill__border"></span>
       <span class="nav-pill__ripple"><span></span></span>
       <span class="nav-pill__title">
@@ -462,35 +178,45 @@ function buildPillMarkup({
   `;
 }
 
-function setupNavigation() {
-  const navMarkup = heroConfig.navLinks
-    .map(
-      (link) => `
-        <a class="nav-pill" href="${link.href}" data-nav-link ${link.placeholder ? "data-placeholder-link" : ""}>
-          <span class="nav-pill__border"></span>
-          <span class="nav-pill__ripple"><span></span></span>
-          <span class="nav-pill__title">
-            <span data-text="${escapeHtml(link.label)}">${escapeHtml(link.label)}</span>
-          </span>
-        </a>
-      `
-    )
-    .join("");
+function buildFilterPillMarkup(filter, isActive) {
+  return `
+    <button
+      class="nav-pill nav-pill--filter${isActive ? " is-current" : ""}"
+      type="button"
+      data-filter-button
+      data-filter="${filter.value}"
+      aria-pressed="${String(isActive)}"
+    >
+      <span class="nav-pill__border"></span>
+      <span class="nav-pill__ripple"><span></span></span>
+      <span class="nav-pill__title">
+        <span data-text="${escapeHtml(filter.label)}">${escapeHtml(filter.label)}</span>
+      </span>
+    </button>
+  `;
+}
 
-  desktopNav.innerHTML = navMarkup;
-  mobileNav.innerHTML = navMarkup;
+function setupNavigation() {
+  document.addEventListener("click", (event) => {
+    const placeholderLink = event.target.closest("[data-placeholder-link]");
+
+    if (placeholderLink) {
+      event.preventDefault();
+    }
+  });
 
   document.querySelectorAll("[data-nav-link]").forEach((link) => {
-    link.addEventListener("click", (event) => {
-      if (link.hasAttribute("data-placeholder-link")) {
-        event.preventDefault();
-      }
+    link.addEventListener("click", () => {
       closeMobileNav();
     });
   });
 
   navToggle.addEventListener("click", () => {
-    toggleMobileNav();
+    const shouldOpen = navToggle.getAttribute("aria-expanded") !== "true";
+    navToggle.setAttribute("aria-expanded", String(shouldOpen));
+    navToggle.setAttribute("aria-label", shouldOpen ? "Fermer le menu" : "Ouvrir le menu");
+    navDrawer.hidden = !shouldOpen;
+    document.body.classList.toggle("is-nav-open", shouldOpen);
   });
 
   window.addEventListener("keydown", (event) => {
@@ -499,40 +225,219 @@ function setupNavigation() {
     }
   });
 
-  const desktopMedia = window.matchMedia("(min-width: 981px)");
-  const handleDesktopMedia = (event) => {
-    if (event.matches) {
-      closeMobileNav();
+  filterBar.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-filter-button]");
+
+    if (!button) {
+      return;
     }
-  };
 
-  if (typeof desktopMedia.addEventListener === "function") {
-    desktopMedia.addEventListener("change", handleDesktopMedia);
-  } else if (typeof desktopMedia.addListener === "function") {
-    desktopMedia.addListener(handleDesktopMedia);
-  }
-}
+    const nextFilter = button.dataset.filter;
 
-function toggleMobileNav(forceState) {
-  const shouldOpen = typeof forceState === "boolean"
-    ? forceState
-    : navToggle.getAttribute("aria-expanded") !== "true";
+    if (!nextFilter || nextFilter === state.activeFilter || !state.projects.length) {
+      return;
+    }
 
-  navToggle.setAttribute("aria-expanded", String(shouldOpen));
-  navToggle.setAttribute("aria-label", shouldOpen ? "Fermer le menu" : "Ouvrir le menu");
-  navDrawer.hidden = !shouldOpen;
-  document.body.classList.toggle("is-nav-open", shouldOpen);
+    state.activeFilter = nextFilter;
+    updateFilterButtons();
+    transitionGallery();
+  });
 }
 
 function closeMobileNav() {
-  toggleMobileNav(false);
+  navToggle.setAttribute("aria-expanded", "false");
+  navToggle.setAttribute("aria-label", "Ouvrir le menu");
+  navDrawer.hidden = true;
+  document.body.classList.remove("is-nav-open");
+}
+
+async function loadProjects() {
+  setStatus("Chargement des projets...", false);
+
+  try {
+    const response = await fetch("./data/projects.json", {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data.projects)) {
+      throw new Error("Invalid payload");
+    }
+
+    state.projects = data.projects;
+    renderGallery(false);
+  } catch (error) {
+    state.projects = [];
+    galleryGrid.innerHTML = "";
+    setStatus(
+      "Impossible de charger les projets. Ouvre cette page via Live Server ou un serveur local.",
+      true
+    );
+  }
+}
+
+function getFilteredProjects() {
+  if (state.activeFilter === "all") {
+    return state.projects;
+  }
+
+  return state.projects.filter(
+    (project) => getProjectCategories(project).includes(state.activeFilter)
+  );
+}
+
+function getProjectCategories(project) {
+  if (Array.isArray(project.categories) && project.categories.length) {
+    return project.categories;
+  }
+
+  return project.category ? [project.category] : [];
+}
+
+function transitionGallery() {
+  const currentCards = gsap.utils.toArray("[data-gallery-card]");
+
+  if (reducedMotion || !currentCards.length) {
+    renderGallery(true);
+    return;
+  }
+
+  const previousHeight = galleryGrid.offsetHeight;
+  galleryTransitionTimeline?.kill();
+
+  galleryTransitionTimeline = gsap.timeline({
+    onComplete: () => {
+      renderGallery(true, previousHeight);
+      galleryTransitionTimeline = null;
+    }
+  });
+
+  galleryTransitionTimeline.to(currentCards, {
+    autoAlpha: 0,
+    y: 20,
+    duration: 0.22,
+    stagger: 0.025,
+    ease: "power2.in"
+  });
+}
+
+function renderGallery(animateIn = false, previousHeight = null) {
+  const projects = getFilteredProjects();
+
+  if (!projects.length) {
+    galleryGrid.innerHTML = "";
+    setStatus("Aucun projet pour ce filtre.", false);
+    return;
+  }
+
+  setStatus("", false);
+
+  galleryGrid.innerHTML = projects
+    .map((project) => {
+      const isPlaceholder = project.href === "#";
+
+      return `
+        <a
+          class="projects-card${isPlaceholder ? " is-placeholder" : ""}"
+          href="${project.href}"
+          data-gallery-card
+          ${isPlaceholder ? "data-placeholder-link" : ""}
+        >
+          <figure class="projects-card__media">
+            <img
+              src="${project.thumbnail}"
+              alt="Miniature du projet ${escapeHtml(project.title)}"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <div class="projects-card__body">
+            <div class="projects-card__meta">
+              <span>${escapeHtml(project.categoryLabel)}</span>
+              <span>${escapeHtml(project.date)}</span>
+            </div>
+            <h3 class="projects-card__title">${escapeHtml(project.title)}</h3>
+            <p class="projects-card__caption">${escapeHtml(project.excerpt || project.description)}</p>
+          </div>
+        </a>
+      `;
+    })
+    .join("");
+
+  const cards = gsap.utils.toArray("[data-gallery-card]");
+
+  if (previousHeight !== null && !reducedMotion) {
+    const nextHeight = galleryGrid.scrollHeight;
+
+    gsap.fromTo(
+      galleryGrid,
+      {
+        height: previousHeight
+      },
+      {
+        height: nextHeight,
+        duration: 0.4,
+        ease: "power2.out",
+        clearProps: "height"
+      }
+    );
+  }
+
+  if (!animateIn || reducedMotion) {
+    gsap.set(cards, {
+      autoAlpha: 1,
+      y: 0
+    });
+    return;
+  }
+
+  gsap.fromTo(
+    cards,
+    {
+      autoAlpha: 0,
+      y: 26
+    },
+    {
+      autoAlpha: 1,
+      y: 0,
+      duration: 0.72,
+      stagger: 0.06,
+      ease: "power3.out"
+    }
+  );
+}
+
+function updateFilterButtons() {
+  document.querySelectorAll("[data-filter-button]").forEach((button) => {
+    const isActive = button.dataset.filter === state.activeFilter;
+    button.classList.toggle("is-current", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+function setStatus(message, isError) {
+  if (!message) {
+    galleryStatus.hidden = true;
+    galleryStatus.textContent = "";
+    galleryStatus.classList.remove("is-error");
+    return;
+  }
+
+  galleryStatus.hidden = false;
+  galleryStatus.textContent = message;
+  galleryStatus.classList.toggle("is-error", Boolean(isError));
 }
 
 function prepareLineReveals() {
   splitInstances.forEach((instance) => instance.revert());
   splitInstances = [];
 
-  revealElements.forEach((element) => {
+  document.querySelectorAll('[data-reveal="lines"]').forEach((element) => {
     if (!element.textContent.trim()) {
       return;
     }
@@ -556,8 +461,8 @@ function prepareLineReveals() {
     splitInstances.push(split);
   });
 
-  if (introHasPlayed) {
-    setIntroStateVisible();
+  if (introPlayed) {
+    setIntroVisible();
     return;
   }
 
@@ -567,26 +472,107 @@ function prepareLineReveals() {
   });
 }
 
-function buildMarquees() {
-  buildHeroMarquee();
-  buildFooterMarquee();
+function playIntroSequence() {
+  introTimeline?.kill();
+
+  const lines = getRevealLineNodes();
+  const filterButtons = gsap.utils.toArray("[data-filter-button]");
+  const cards = gsap.utils.toArray("[data-gallery-card]");
+
+  if (reducedMotion) {
+    setIntroVisible();
+    introPlayed = true;
+    return;
+  }
+
+  introTimeline = gsap.timeline({
+    defaults: {
+      ease: "power3.out"
+    }
+  });
+
+  introTimeline
+    .fromTo(
+      lines,
+      {
+        yPercent: 105,
+        opacity: 0
+      },
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 0.95,
+        stagger: 0.05
+      },
+      0.05
+    )
+    .fromTo(
+      filterButtons,
+      {
+        y: 22,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.04
+      },
+      0.18
+    )
+    .fromTo(
+      cards,
+      {
+        y: 30,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.05
+      },
+      0.24
+    );
+
+  introTimeline.eventCallback("onComplete", () => {
+    introPlayed = true;
+  });
 }
 
-function buildHeroMarquee() {
-  marqueeTween?.kill();
-  marqueeSettleTween?.kill();
-
-  marqueeTween = buildLoopingMarquee({
-    container: marquee,
-    track: marqueeTrack,
-    groupClass: "hero__marquee-group",
-    itemClass: "hero__marquee-item",
-    label: `${heroConfig.name} \u2014`,
-    widthMultiplier: 2.6,
-    reducedDuration: 72,
-    minDuration: 20,
-    speedDivisor: 108
+function setIntroVisible() {
+  gsap.set(getRevealLineNodes(), {
+    yPercent: 0,
+    opacity: 1
   });
+
+  gsap.set(
+    [
+      ...gsap.utils.toArray("[data-filter-button]"),
+      ...gsap.utils.toArray("[data-gallery-card]")
+    ],
+    {
+      y: 0,
+      opacity: 1
+    }
+  );
+}
+
+function initSmoothScroll() {
+  if (reducedMotion) {
+    return;
+  }
+
+  lenisInstance = new Lenis({
+    lerp: 0.08,
+    smoothWheel: true
+  });
+
+  lenisInstance.on("scroll", ScrollTrigger.update);
+  gsap.ticker.add((time) => {
+    lenisInstance.raf(time * 1000);
+  });
+  gsap.ticker.lagSmoothing(0);
 }
 
 function buildFooterMarquee() {
@@ -597,7 +583,7 @@ function buildFooterMarquee() {
     track: footerMarqueeTrack,
     groupClass: "site-footer__marquee-group",
     itemClass: "site-footer__marquee-item",
-    label: `${footerConfig.marqueeName} \u2014`,
+    label: `${pageConfig.footer.marqueeName} \u2014`,
     widthMultiplier: 2.8,
     reducedDuration: 110,
     minDuration: 32,
@@ -648,455 +634,22 @@ function buildLoopingMarquee({
   });
 }
 
-function initSmoothScroll() {
-  if (reducedMotion) {
-    return;
-  }
-
-  lenisInstance = new Lenis({
-    lerp: 0.08,
-    smoothWheel: true
-  });
-
-  lenisInstance.on("scroll", ScrollTrigger.update);
-  gsap.ticker.add(tickLenis);
-  gsap.ticker.lagSmoothing(0);
-}
-
-function tickLenis(time) {
-  if (lenisInstance) {
-    lenisInstance.raf(time * 1000);
-  }
-}
-
-function playIntroSequence() {
-  revealTimeline?.kill();
-
-  const lines = getRevealLineNodes();
-  const cards = getCards();
-
-  revealTimeline = gsap.timeline({
-    defaults: {
-      ease: "power3.out"
-    }
-  });
-
-  if (reducedMotion) {
-    setIntroStateVisible();
-    introHasPlayed = true;
-    return;
-  }
-
-  revealTimeline
-    .fromTo(
-      lines,
-      { yPercent: 105, opacity: 0 },
-      {
-        yPercent: 0,
-        opacity: 1,
-        duration: 0.95,
-        stagger: 0.045
-      },
-      0.08
-    )
-    .fromTo(
-      cards,
-      {
-        y: 34,
-        opacity: 0,
-        scale: 0.985
-      },
-      {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 1.05,
-        stagger: 0.08
-      },
-      0.18
-    );
-
-  revealTimeline.eventCallback("onComplete", () => {
-    introHasPlayed = true;
-  });
-}
-
-function setIntroStateVisible() {
-  gsap.set(getRevealLineNodes(), {
-    yPercent: 0,
-    opacity: 1
-  });
-
-  gsap.set(getCards(), {
-    y: 0,
-    opacity: 1,
-    scale: 1
-  });
-}
-
-function initScrollDynamics() {
-  scrollArtifacts.forEach((artifact) => artifact.kill());
-  scrollArtifacts = [];
-  siteHeader.classList.remove("is-inverse");
-
-  initHeroScrollDynamics();
-  initDarkSectionHeaderTheme();
-  initAboutSectionAnimations();
-  initProjectsSection();
-  ScrollTrigger.refresh();
-}
-
-function initDarkSectionHeaderTheme() {
-  const darkSections = gsap.utils.toArray("[data-dark-section]");
-
-  if (!darkSections.length) {
-    return;
-  }
-
-  const themeTriggers = [];
-  const syncHeaderTheme = () => {
-    siteHeader.classList.toggle(
-      "is-inverse",
-      themeTriggers.some((trigger) => trigger.isActive)
-    );
-  };
-
-  darkSections.forEach((section) => {
-    const trigger = ScrollTrigger.create({
-      trigger: section,
-      start: "top top+=40",
-      end: "bottom top+=40",
-      onEnter: syncHeaderTheme,
-      onEnterBack: syncHeaderTheme,
-      onLeave: syncHeaderTheme,
-      onLeaveBack: syncHeaderTheme
-    });
-
-    themeTriggers.push(trigger);
-    scrollArtifacts.push(trigger);
-  });
-
-  syncHeaderTheme();
-}
-
-function initHeroScrollDynamics() {
-  if (!reducedMotion) {
-    gsap.utils.toArray(".hero-card-slot").forEach((slot, index) => {
-      const slotTween = gsap.to(slot, {
-        yPercent: -2 - index * 0.85,
-        ease: "none",
-        scrollTrigger: {
-          trigger: hero,
-          start: "top top",
-          end: "bottom top",
-          scrub: true
-        }
-      });
-      scrollArtifacts.push(slotTween);
-    });
-
-    getCards().forEach((card, index) => {
-      const image = card.querySelector("img");
-      const imageTween = gsap.to(image, {
-        yPercent: -2 - index,
-        ease: "none",
-        scrollTrigger: {
-          trigger: hero,
-          start: "top top",
-          end: "bottom top",
-          scrub: true
-        }
-      });
-      scrollArtifacts.push(imageTween);
-    });
-  }
-
-  const marqueeTrigger = ScrollTrigger.create({
-    trigger: hero,
-    start: "top top",
-    end: "bottom top",
-    onUpdate(self) {
-      if (reducedMotion || !marqueeTween) {
-        return;
-      }
-
-      const nextScale = gsap.utils.clamp(
-        1,
-        1.28,
-        1 + Math.abs(self.getVelocity()) / 8000
-      );
-
-      gsap.to(marqueeTween, {
-        timeScale: nextScale,
-        duration: 0.18,
-        overwrite: true
-      });
-
-      marqueeSettleTween?.kill();
-      marqueeSettleTween = gsap.to(marqueeTween, {
-        timeScale: 1,
-        duration: 0.85,
-        delay: 0.12,
-        ease: "power2.out",
-        overwrite: true
-      });
-    }
-  });
-
-  scrollArtifacts.push(marqueeTrigger);
-}
-
-function initAboutSectionAnimations() {
-  aboutTextSplit?.revert();
-  aboutTextSplit = null;
-
-  if (!aboutSection) {
-    return;
-  }
-
-  if (reducedMotion) {
-    return;
-  }
-
-  const introTween = gsap.fromTo(
-    aboutInner,
-    {
-      opacity: 0.2,
-      y: 60
-    },
-    {
-      opacity: 1,
-      y: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: aboutSection,
-        start: "top 85%",
-        end: "top 35%",
-        scrub: true
-      }
-    }
-  );
-  scrollArtifacts.push(introTween);
-
-  aboutTextSplit = new SplitType(aboutText, {
-    types: [aboutSectionConfig.highlightType]
-  });
-
-  const targets = aboutTextSplit[aboutSectionConfig.highlightType];
-
-  const scrubTween = gsap.from(targets, {
-    opacity: 0.18,
-    color: "#6a655f",
-    stagger: 0.7,
-    ease: "none",
-    scrollTrigger: {
-      trigger: aboutText,
-      start: "top 72%",
-      end: "bottom 36%",
-      scrub: true
-    }
-  });
-
-  scrollArtifacts.push(scrubTween);
-}
-
-function initProjectsSection() {
-  if (!projectsSection) {
-    return;
-  }
-
-  setActiveProject(activeProjectIndex, {
-    immediate: true,
-    force: true
-  });
-
-  if (window.innerWidth <= 1080) {
-    return;
-  }
-
-  const syncActiveProjectFromScroll = () => {
-    const focusLine = window.innerHeight * 0.56;
-    let closestIndex = 0;
-    let closestDistance = Number.POSITIVE_INFINITY;
-
-    projectItemsDesktop.forEach((item, index) => {
-      const rect = item.getBoundingClientRect();
-      const itemCenter = rect.top + rect.height / 2;
-      const distance = Math.abs(itemCenter - focusLine);
-
-      if (distance < closestDistance) {
-        closestDistance = distance;
-        closestIndex = index;
-      }
-    });
-
-    setActiveProject(closestIndex);
-  };
-
-  const trigger = ScrollTrigger.create({
-    trigger: projectsSection,
-    start: "top bottom",
-    end: "bottom top",
-    onEnter: syncActiveProjectFromScroll,
-    onEnterBack: syncActiveProjectFromScroll,
-    onUpdate: syncActiveProjectFromScroll,
-    onRefresh: syncActiveProjectFromScroll
-  });
-
-  scrollArtifacts.push(trigger);
-  syncActiveProjectFromScroll();
-}
-
-function setActiveProject(index, options = {}) {
-  const {
-    immediate = false,
-    force = false
-  } = options;
-  const project = projectsSectionConfig.projects[index];
-
-  if (!project) {
-    return;
-  }
-
-  updateProjectActiveState(index);
-  updateProjectMeta(project);
-
-  if (!projectMediaLayers.length) {
-    activeProjectIndex = index;
-    return;
-  }
-
-  if (index === activeProjectIndex && !force) {
-    return;
-  }
-
-  if (immediate || reducedMotion) {
-    projectMediaTimeline?.kill();
-    projectMediaTimeline = null;
-
-    projectMediaLayers.forEach((layer, layerIndex) => {
-      const image = layer.querySelector("img");
-      image.src = project.imageSrc;
-      image.alt = project.imageAlt;
-      layer.classList.toggle("is-active", layerIndex === 0);
-      gsap.set(layer, {
-        opacity: layerIndex === 0 ? 1 : 0,
-        scale: layerIndex === 0 ? 1 : 1.02
-      });
-    });
-
-    activeProjectLayerIndex = 0;
-    activeProjectIndex = index;
-    return;
-  }
-
-  const currentLayer = projectMediaLayers[activeProjectLayerIndex];
-  const nextLayerIndex = activeProjectLayerIndex === 0 ? 1 : 0;
-  const nextLayer = projectMediaLayers[nextLayerIndex];
-  const nextImage = nextLayer.querySelector("img");
-
-  projectMediaTimeline?.kill();
-  currentLayer.classList.add("is-active");
-  nextLayer.classList.remove("is-active");
-
-  nextImage.src = project.imageSrc;
-  nextImage.alt = project.imageAlt;
-  nextLayer.classList.add("is-active");
-
-  gsap.killTweensOf([currentLayer, nextLayer]);
-  gsap.set(nextLayer, {
-    opacity: 0,
-    scale: 1.035
-  });
-
-  projectMediaTimeline = gsap.timeline({
-    defaults: {
-      overwrite: true
-    },
-    onComplete: () => {
-      currentLayer.classList.remove("is-active");
-      gsap.set(currentLayer, {
-        opacity: 0,
-        scale: 1.02
-      });
-      projectMediaTimeline = null;
-    }
-  })
-    .to(
-      currentLayer,
-      {
-        opacity: 0,
-        scale: 0.985,
-        duration: 0.38,
-        ease: "power2.out"
-      },
-      0
-    )
-    .to(
-      nextLayer,
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 0.54,
-        ease: "power2.out"
-      },
-      0
-    );
-
-  activeProjectLayerIndex = nextLayerIndex;
-  activeProjectIndex = index;
-}
-
-function updateProjectActiveState(index) {
-  projectItemsDesktop.forEach((item, itemIndex) => {
-    item.classList.toggle("is-active", itemIndex === index);
-  });
-}
-
-function updateProjectMeta(project) {
-  projectMetaType.textContent = project.type;
-  projectMetaDate.textContent = project.date;
-
-  if (!projectLinkElement) {
-    return;
-  }
-
-  projectLinkElement.href = project.href;
-  projectLinkElement.toggleAttribute("data-placeholder-link", project.href === "#");
-  projectLinkElement.setAttribute(
-    "aria-label",
-    `Voir le projet ${project.title}`
-  );
-}
-
 function scheduleResize() {
   window.clearTimeout(resizeTimer);
   resizeTimer = window.setTimeout(() => {
     prepareLineReveals();
-    buildMarquees();
-
-    if (introHasPlayed) {
-      setIntroStateVisible();
-    } else {
-      playIntroSequence();
-    }
-
-    initScrollDynamics();
+    buildFooterMarquee();
+    setIntroVisible();
+    ScrollTrigger.refresh();
   }, 180);
 }
 
 function getRevealLineNodes() {
-  return revealElements.flatMap((element) => [
-    ...element.querySelectorAll(".line-inner")
-  ]);
-}
-
-function getCards() {
-  return gsap.utils.toArray("[data-card]");
+  return [...document.querySelectorAll(".line-inner")];
 }
 
 function escapeHtml(value) {
-  return value
+  return String(value)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
