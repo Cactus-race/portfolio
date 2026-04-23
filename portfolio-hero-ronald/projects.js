@@ -5,9 +5,9 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
 const pageConfig = {
   email: "rouaid.kerroum@gmail.com",
   label: "PORTFOLIO / PROJETS",
-  title: "Une selection de projets penses pour etre vus, parcourus et memorises.",
+  title: "Selection de projets",
   lede:
-    "Une galerie editoriale qui rassemble des projets web, video, motion et design graphique avec une lecture simple, premium et directe.",
+    "Une sélection de projets en web, vidéo, motion et design graphique, qui retracent mon parcours et mon évolution. Jetez-y un œil.",
   navLinks: [
     { label: "Accueil", href: "./index.html" },
     { label: "Projets", href: "./projects.html", current: true },
